@@ -1,0 +1,221 @@
+   Operating System With Linux Lab                                            II SEM BCA/BSC 2024
+
+
+                                             PART-A
+1. Write a shell program to find the sum of first “N” natural numbers.
+   Note: Ensure that the script handles valid and invalid inputs.
+
+   #!/bin/bash
+
+   echo “Enter the number”
+    read N
+   if [[ ! "$N" =~ ^[0-9]+$ ]];
+   then
+      echo "Error: Please provide a valid positive integer as an argument."
+   else
+   sum=0
+   for((i=0;i<=N;i++))
+   do
+             sum=$((sum + i))
+   done
+   echo "Sum of first" $N "natural numbers is:"
+   echo $sum
+   fi
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+   Operating System With Linux Lab                                            II SEM BCA/BSC 2024
+
+
+
+2. Develop a shell script that determines whether a given number is a prime number or not.
+   Note: Ensure that the script handles valid and invalid inputs.
+
+   #!/bin/bash
+
+   echo “Enter the number”
+   read N
+   if [[ ! "$N" =~ ^[0-9]+$ ]];
+    then
+      echo "Error: Please provide a valid positive integer as an argument."
+   else
+   p=0
+   for((i=1;i<=N;i++))
+   do
+                    if [ $((N%i)) -eq 0 ]
+                    then
+                             p=$((p+1))
+                    fi
+   done
+   if [ $p -eq 2 ]
+   then
+                    echo “It is a prime number”
+   else
+                    echo “It is not a prime number”
+       fi
+   fi
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+   Operating System With Linux Lab                                           II SEM BCA/BSC 2024
+
+
+
+3. Write a shell program to reverse a number and find its sum.
+
+   #!/bin/bash
+
+   echo “Enter the number”
+   read N
+          if [[ ! "$N" =~ ^[0-9]+$ ]];
+          then
+             echo "Error: Please provide a valid positive integer as an argument."
+          else
+             num=$N
+      rem=0
+      rev=0
+      s=0
+      sum=0
+      while(($num>0))
+      do
+              rem=$((num % 10))
+              num=$((num / 10))
+              rev=$(((rev * 10) + rem))
+              sum=$((sum+rem))
+      done
+      echo "Reverse of $N is: “ $rev
+      echo “Sum of number: “ $sum
+      fi
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+    Operating System With Linux Lab                                     II SEM BCA/BSC 2024
+
+
+
+4. Write a shell program to find the smallest number among the set of integers.
+
+   #!/bin/bash
+
+   echo "Enter value of n:"
+   read n
+   echo "Enter the values"
+   read a
+   small=$a
+   for((i=1;i<n;i++))
+   do
+        read b
+        if (( $b < $small ))
+        then
+              small=$b
+        fi
+   done
+   echo "The smallest number is:" $small
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+    Operating System With Linux Lab                                      II SEM BCA/BSC 2024
+
+
+
+5. Write a shell program to simulate the arithmetic operations (addition, subtraction,
+   multiplication, division and modulus).
+
+   #!/bin/bash
+
+   echo “Enter two number”
+   read x y
+   sum=$((x+y))
+   sub=$((x-y))
+   mul=$((x*y))
+   echo $x “+” $y ”=” $sum
+   echo $x “-” $y “= “$sub
+   echo $x “*” $y “= “ $mul
+   if [ $y -eq 0 ]
+            then
+                   echo “Division and modulus is not possible”
+            else
+                   div=$((x/y))
+                   mod=$((x%y))
+                   echo $x “/” $y ”= “ $div
+                   echo $x “%” $y ”= “ $mod
+   fi
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+   Operating System With Linux Lab                                            II SEM BCA/BSC 2024
+
+
+
+6. Write a shell program to print first N odd and even numbers.
+
+   #!/bin/bash
+
+   echo “Enter the limit to print odd and even numbers”
+   read N
+   if [[ ! "$N" =~ ^[0-9]+$ ]];
+   then
+      echo "Error: Please provide a valid positive integer as an argument."
+   else
+
+   echo “The first “ $N “odd numbers are:”
+   for((i=1;i<=N;i++))
+          do
+                  echo $(((i*2)-1))
+          done
+   echo “The first “ $N “even numbers are:”
+   for((i=0;i<N;i++))
+          do
+                  echo $((i*2))
+          done
+   fi
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+    Operating System With Linux Lab                                           II SEM BCA/BSC 2024
+
+
+
+7. Write a shell script to display the fibonacci series for a given number N
+
+
+   #!/bin/bash
+
+   echo “Enter the number”
+   read n
+   if ! [[ “$n” =~ ^[0-9]+$ ]];
+    then
+      echo "Error: Please provide a valid positive integer for the number of terms."
+      exit 1
+   fi
+
+   a=0
+   b=1
+
+   echo "Fibonacci series up to $n terms: "
+
+   for ((i=0; i<$n; i++));
+    do
+     echo "$a "
+     next=$((a + b))
+     a=$b
+     b=$next
+   done
+
+
+
+
+   DEPARTMENT OF COMPUTER SCIENCE, YIASCM, MANGALURU
+
